@@ -6,6 +6,7 @@ const validEvent = ['push', 'pull_request', 'create'];
 function getBranchName(eventName, payload) {
     let branchName;
     switch (eventName) {
+        case 'create':
         case 'push':
             branchName = payload.ref.replace('refs/heads/', '');
             break;
